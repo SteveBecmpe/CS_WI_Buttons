@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
     <title>Basic Button</title>
 </head>
 
@@ -26,6 +26,7 @@
         <input type="text" placeholder="Button Width in px" id="buttonWidthInput" />
         <button id="buttonWidthGo">Update Width</button>
     </div>
+    <p>Use the thin line box as a guide when you snip the button and paste into your document.</p>
     <style>
         .WIbutton {
             border-radius: 25px;
@@ -69,6 +70,8 @@
     </style>
 
     <script>
+        document.body.style.zoom="150%";
+
         document.getElementById("searchButtonGo").addEventListener("click", function (event) {
             let valuetext = document.getElementById("textContentInput").value;
             document.getElementById("buttonContent").innerHTML = valuetext;
