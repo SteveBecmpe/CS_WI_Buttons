@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Button</title>
+</head>
+<body>
+    <button style="height: 30px; width: 150px;" class="WIbutton" id="buttonContent">
+    </button>
+   <div>
+        <input type="text" placeholder="Text Content" id="textContentInput" />
+        <button id="searchButtonGo">Update Text</button>
+    </div>
+    <div>
+        <input type="text" placeholder="Button height in px" id="buttonheightInput" />
+        <button id="buttonHeightGo">Update Height</button>
+    </div>
+    <div>
+        <input type="text" placeholder="Button Width in px" id="buttonWidthInput" />
+        <button id="buttonWidthGo">Update Width</button>
+    </div>
+    <style>
+        .WIbutton {
+            border-radius: 25px;
+            color: white;
+            background: linear-gradient(rgb(207, 206, 206), grey);
+            text-shadow: 5px 5px 5px black;
+            box-shadow: 2px 5px 5px black;
+            margin: 20px;
+        }
+        #textContentInput {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin: 5px;
+            margin-top: 20px;
+        }
+     
+        #buttonheightInput {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin: 5px;
+        }
+        #buttonWidthInput {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin: 5px;
+        }
+        footer{
+            margin: 50px;
+            font-size: smaller;
+            width: 200px;
+        }
+    </style>
+
+    <script>
+        document.getElementById("searchButtonGo").addEventListener("click", function (event) {
+            let valuetext = document.getElementById("textContentInput").value;
+            document.getElementById("buttonContent").innerHTML = valuetext;
+            document.getElementById("textContentInput").value = "";
+        });
+
+        function refreshPlaceHolders() {
+            let buttonHeight = document.getElementById("buttonContent").style.height;
+            let currentButtonHeightPlaceHolder = "button height " + buttonHeight;
+            let buttonWidth = document.getElementById("buttonContent").style.width;
+            let currentButtonWidthPlaceHolder = "button width " + buttonWidth;
+            document.getElementById("buttonheightInput").setAttribute("placeholder", currentButtonHeightPlaceHolder);
+            document.getElementById("buttonWidthInput").setAttribute("placeholder", currentButtonWidthPlaceHolder);
+        }
+        refreshPlaceHolders();
+
+        document.getElementById("buttonHeightGo").addEventListener("click", function (event) {
+            let tempheight = document.getElementById("buttonheightInput").value;
+            console.log(tempheight);
+            tempheight = tempheight + "px";
+            console.log(tempheight);
+            document.getElementById("buttonContent").style.height = tempheight;
+            document.getElementById("buttonheightInput").value = "";
+            refreshPlaceHolders();
+        });
+
+        document.getElementById("buttonWidthGo").addEventListener("click", function (event) {
+            let tempwidth = document.getElementById("buttonWidthInput").value;
+            tempwidth = tempwidth + "px";
+            document.getElementById("buttonContent").style.width = tempwidth;
+            document.getElementById("buttonWidthInput").value = "";
+            refreshPlaceHolders();
+        });
+    </script>
+
+    <footer>Copy Right &#169; Steve Black, CivilianServices Co. 2021</footer>
+</body>
+</html>
