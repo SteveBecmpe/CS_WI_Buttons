@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Button</title>
 </head>
+
 <body>
-    <button style="height: 30px; width: 150px;" class="WIbutton" id="buttonContent">
-    </button>
-   <div>
+    <!-- add 40 to the width  -->
+    <div id="snipBox" style="width: 190px;"> 
+        <div class="center">
+            <button style="height: 30px; width: 150px;" class="WIbutton" id="buttonContent"></button>
+        </div>
+    </div>
+    <div>
         <input type="text" placeholder="Text Content" id="textContentInput" />
         <button id="searchButtonGo">Update Text</button>
     </div>
@@ -29,28 +35,36 @@
             box-shadow: 2px 5px 5px black;
             margin: 20px;
         }
+
         #textContentInput {
             margin-left: 20px;
             margin-right: 20px;
             margin: 5px;
             margin-top: 20px;
         }
-     
+
         #buttonheightInput {
             margin-left: 20px;
             margin-right: 20px;
             margin: 5px;
         }
+
         #buttonWidthInput {
             margin-left: 20px;
             margin-right: 20px;
             margin: 5px;
         }
-        footer{
+
+        footer {
             margin: 50px;
             font-size: smaller;
             width: 200px;
         }
+
+        #snipBox {
+            border: 2px solid black;
+        }
+
     </style>
 
     <script>
@@ -82,8 +96,11 @@
 
         document.getElementById("buttonWidthGo").addEventListener("click", function (event) {
             let tempwidth = document.getElementById("buttonWidthInput").value;
+            let tempSnipWidth = Number(tempwidth) + 40;
             tempwidth = tempwidth + "px";
+            tempSnipWidth = tempSnipWidth + "px";
             document.getElementById("buttonContent").style.width = tempwidth;
+            document.getElementById("snipBox").style.width = tempSnipWidth;
             document.getElementById("buttonWidthInput").value = "";
             refreshPlaceHolders();
         });
@@ -91,4 +108,5 @@
 
     <footer>Copy Right &#169; Steve Black, CivilianServices Co. 2021</footer>
 </body>
+
 </html>
