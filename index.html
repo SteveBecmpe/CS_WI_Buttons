@@ -9,10 +9,10 @@
 
 <body>
     <!-- add 40 to the width  -->
-    <div id="snipBox" style="width: 190px;"> 
-        <div class="center">
+    <div id="snipBox" style="height: 40px; width: 160px;"> 
+        
             <button style="height: 30px; width: 150px;" class="WIbutton" id="buttonContent"></button>
-        </div>
+        
     </div>
     <div>
         <input type="text" placeholder="Text Content" id="textContentInput" />
@@ -33,7 +33,8 @@
             background: linear-gradient(rgb(207, 206, 206), grey);
             text-shadow: 5px 5px 5px black;
             box-shadow: 2px 5px 5px black;
-            margin: 20px;
+            margin-left: 4px;
+            margin-top: 3px;
         }
 
         #textContentInput {
@@ -62,7 +63,7 @@
         }
 
         #snipBox {
-            border: 2px solid black;
+            border: 1px solid black;
         }
 
     </style>
@@ -86,17 +87,20 @@
 
         document.getElementById("buttonHeightGo").addEventListener("click", function (event) {
             let tempheight = document.getElementById("buttonheightInput").value;
+            let tempSnipheight = Number(tempheight) + 10;
+            tempSnipheight = tempSnipheight + "px";
             console.log(tempheight);
             tempheight = tempheight + "px";
             console.log(tempheight);
             document.getElementById("buttonContent").style.height = tempheight;
+            document.getElementById("snipBox").style.height = tempSnipheight;
             document.getElementById("buttonheightInput").value = "";
             refreshPlaceHolders();
         });
 
         document.getElementById("buttonWidthGo").addEventListener("click", function (event) {
             let tempwidth = document.getElementById("buttonWidthInput").value;
-            let tempSnipWidth = Number(tempwidth) + 40;
+            let tempSnipWidth = Number(tempwidth) + 10;
             tempwidth = tempwidth + "px";
             tempSnipWidth = tempSnipWidth + "px";
             document.getElementById("buttonContent").style.width = tempwidth;
