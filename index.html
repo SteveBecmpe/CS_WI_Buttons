@@ -9,10 +9,10 @@
 
 <body>
     <!-- add 40 to the width  -->
-    <div id="snipBox" style="height: 40px; width: 160px;"> 
-        
-            <button style="height: 30px; width: 150px;" class="WIbutton" id="buttonContent"></button>
-        
+    <div id="snipBox" style="height: 40px; width: 160px;">
+
+        <button style="height: 30px; width: 150px;" class="WIbutton" id="buttonContent"></button>
+
     </div>
     <div>
         <input type="text" placeholder="Text Content" id="textContentInput" />
@@ -30,10 +30,15 @@
     <style>
         .WIbutton {
             border-radius: 25px;
+            border: 0;
+            /* border-style: outset; */
+            /* border-style: groove; */
             color: white;
-            background: linear-gradient(rgb(207, 206, 206), grey);
-            text-shadow: 5px 5px 5px black;
-            box-shadow: 2px 5px 5px black;
+            background: linear-gradient(rgb(207, 206, 206), rgb(66, 64, 64));
+            text-shadow: 1px 1px 1px black;
+            /*5px 5px 5px black; */
+            box-shadow: 2px 2px 1px black;
+            /*2px 5px 5px black;*/
             margin-left: 4px;
             margin-top: 3px;
         }
@@ -66,11 +71,10 @@
         #snipBox {
             border: 1px solid black;
         }
-
     </style>
 
     <script>
-        document.body.style.zoom="150%";
+        // document.body.style.zoom="150%";
 
         document.getElementById("searchButtonGo").addEventListener("click", function (event) {
             let valuetext = document.getElementById("textContentInput").value;
