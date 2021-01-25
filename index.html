@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <!-- add 40 to the width  -->
-    <div id="snipBox" style="height: 40px; width: 160px;">
+    <!-- add 10 to the width and height  -->
+    <div id="snipBox" style="height: 38px; width: 185px;">
 
-        <button style="height: 30px; width: 150px;" class="WIbutton" id="buttonContent"></button>
+        <button style="height: 28px; width: 175px;" class="WIbutton" id="buttonContent"></button>
 
     </div>
     <div>
@@ -27,18 +27,19 @@
         <button id="buttonWidthGo">Update Width</button>
     </div>
     <p>Use the thin line box as a guide when you snip the button and paste into your document.</p>
+    <p>Text input automatically capitalizes.</p>
+    <p>Pressing enter key while in each input box is the same as clicking the update button.</p>
     <style>
         .WIbutton {
             border-radius: 25px;
             border: 0;
-            /* border-style: outset; */
-            /* border-style: groove; */
             color: white;
+            text-transform: uppercase;
+            font-weight: 550; 
+            font-size: 15px;
             background: linear-gradient(rgb(207, 206, 206), rgb(66, 64, 64));
             text-shadow: 1px 1px 1px black;
-            /*5px 5px 5px black; */
             box-shadow: 2px 2px 1px black;
-            /*2px 5px 5px black;*/
             margin-left: 4px;
             margin-top: 3px;
         }
@@ -74,7 +75,7 @@
     </style>
 
     <script>
-        // document.body.style.zoom="150%";
+        document.body.style.zoom = "150%";
 
         document.getElementById("searchButtonGo").addEventListener("click", function (event) {
             let valuetext = document.getElementById("textContentInput").value;
@@ -114,6 +115,40 @@
             document.getElementById("snipBox").style.width = tempSnipWidth;
             document.getElementById("buttonWidthInput").value = "";
             refreshPlaceHolders();
+        });
+
+        let input = document.getElementById("textContentInput");//press enter is the same as clicking update text button
+        // Execute a function when the user releases a key on the keyboard
+        input.addEventListener("keyup", function (event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("searchButtonGo").click();//click the update text button when enter is press while in the input box
+            }
+        });
+        let input1 = document.getElementById("buttonheightInput");//press enter is the same as clicking update text button
+        // Execute a function when the user releases a key on the keyboard
+        input1.addEventListener("keyup", function (event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("buttonHeightGo").click();//click the update text button when enter is press while in the input box
+            }
+        });
+        let input2 = document.getElementById("buttonWidthInput");//press enter is the same as clicking update text button
+        // Execute a function when the user releases a key on the keyboard
+        input2.addEventListener("keyup", function (event) {
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("buttonWidthGo").click();//click the update text button when enter is press while in the input box
+            }
         });
     </script>
 
