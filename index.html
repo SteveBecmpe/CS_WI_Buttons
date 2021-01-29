@@ -95,6 +95,7 @@
 
         document.getElementById("buttonHeightGo").addEventListener("click", function (event) {
             let tempheight = document.getElementById("buttonheightInput").value;
+            if(tempheight>0){
             let tempSnipheight = Number(tempheight) + 10;
             tempSnipheight = tempSnipheight + "px";
             console.log(tempheight);
@@ -104,10 +105,12 @@
             document.getElementById("snipBox").style.height = tempSnipheight;
             document.getElementById("buttonheightInput").value = "";
             refreshPlaceHolders();
+            }
         });
 
         document.getElementById("buttonWidthGo").addEventListener("click", function (event) {
             let tempwidth = document.getElementById("buttonWidthInput").value;
+            if(tempwidth){
             let tempSnipWidth = Number(tempwidth) + 10;
             tempwidth = tempwidth + "px";
             tempSnipWidth = tempSnipWidth + "px";
@@ -115,6 +118,7 @@
             document.getElementById("snipBox").style.width = tempSnipWidth;
             document.getElementById("buttonWidthInput").value = "";
             refreshPlaceHolders();
+            }
         });
 
         let input = document.getElementById("textContentInput");//press enter is the same as clicking update text button
